@@ -17,10 +17,10 @@ function Navbar() {
         </div>
         <div className='text-white text-lg ml-50p flex gap-64' >
             <Link href="/python" className='transition transform duration-300 ease-in-out hover:scale-110'>
-                Javascript
+                Python
             </Link>
             <Link href="/javascript" className='transition transform duration-300 ease-in-out hover:scale-110'>
-                Python
+                Javascript
             </Link>
             <Link href="/history" className='transition transform duration-300 ease-in-out hover:scale-110'>  
                 History
