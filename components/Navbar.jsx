@@ -16,10 +16,10 @@ function Navbar() {
             <Link className='my-auto -ml-10 z-50 transition transform duration-300 ease-in-out hover:scale-110' href="/">Home</Link>
         </div>
         <div className='text-white text-lg ml-50p flex gap-64' >
-            <Link href="/javascript" className='transition transform duration-300 ease-in-out hover:scale-110'>
+            <Link href="/python" className='transition transform duration-300 ease-in-out hover:scale-110'>
                 Javascript
             </Link>
-            <Link href="/python" className='transition transform duration-300 ease-in-out hover:scale-110'>
+            <Link href="/javascript" className='transition transform duration-300 ease-in-out hover:scale-110'>
                 Python
             </Link>
             <Link href="/history" className='transition transform duration-300 ease-in-out hover:scale-110'>  
