@@ -1,6 +1,6 @@
 import LearningBox from '@/components/LearningBox'
 import React from 'react'
-import {jsArray} from "@/components/data.jsx"
+import {jsArray} from "@/data/learning-data.jsx"
 function Javascript() {
   return (
     <div className='h-full w-full flex'>
