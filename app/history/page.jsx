@@ -16,7 +16,7 @@ function History() {
   
   const compArray = personsData.map((obj)=>{
     const itemToAdd = quotes.find(element => element.name === obj.name)
-    return {...obj, quote: itemToAdd ? itemToAdd.quote : null}
+    return {...obj, quote: obj.quote ? obj.quote : (itemToAdd ? itemToAdd.quote : null)}
   })
   console.log(compArray)
   const elements = compArray.map((obj)=>{
