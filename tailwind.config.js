@@ -12,7 +12,8 @@ module.exports = {
         'single-day': ['"Single Day"', 'cursive']
       },
       height: {
-        "1/8": "12.5%"
+        "1/8": "12.5%",
+        "5p": "7%"
     },
       margin: {
         "50p": "24%"

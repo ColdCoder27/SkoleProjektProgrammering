@@ -1,17 +1,25 @@
 "use client"
 import Head from "next/head"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { personsData, quotes } from '@/data/persons-data'
 import { useRouter } from 'next/navigation'
 import { IoIosSearch } from "react-icons/io";
+import { BsFillPlusSquareFill } from "react-icons/bs";
 
 function History() {
+  
+  const [toggleForm, setToggleForm] = useState(false)
   const router = useRouter()
   const [input, setInput] = useState("")
   const handleChange = (e) => {
     setInput(e.target.value)
     console.log(input)
+  }
+  
+  const toggle = () => {
+    setToggleForm(prevForm => !prevForm)
+    console.log(toggleForm)
   }
   
   const compArray = personsData.map((obj)=>{
@@ -42,6 +50,7 @@ function History() {
             <p className='text-center text-xl mt-5 font-semibold'>{person}</p>
             <p className='text-center mt-10 font-gamja-flower text-lg w-3/4'>-{obj.description}</p>
             <p className="mt-10 text-center w-1/2 font-gamja-flower text-md">&quot;{obj.quote}&quot;</p>
+            <p>{person}</p>
           </div>
         </div>
       )
@@ -56,6 +65,10 @@ function History() {
         <span className='mr-3 text-lg font-semibold'>{"Find a hero =>"}</span>
         <input type='text' onChange={handleChange} placeholder='Search' className='bg-white w-1/5 h-12 rounded-xl border-2 pl-2 text-lg font-bold'/>
         <IoIosSearch className='ml-4 text-3xl'/>
+      </div>
+      <div onClick={toggle} className="w-1/6 h-5p bg-blue-400 rounded-xl absolute top-32 right-16 text-white flex justify-center items-center text-lg font-bold  transition transform duration-300 ease-in-out hover:scale-110 cursor-pointer">
+          Legg til en Person
+          <BsFillPlusSquareFill className="ml-3 text-xl"/>
       </div>
       <div className=' w-5/5 h-full grid grid-cols-2'>
         {elements}
