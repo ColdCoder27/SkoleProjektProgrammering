@@ -30,7 +30,7 @@ function History() {
           <div className='flex flex-col items-center w-full'>
             <p className='text-center text-xl mt-5 font-semibold'>{person}</p>
             <p className='text-center mt-10 font-gamja-flower text-lg w-3/4'>-{obj.description}</p>
-            <p className="mt-10 text-center w-1/2 font-gamja-flower text-md">"{obj.quote && obj.quote}"</p>
+            <p className="mt-10 text-center w-1/2 font-gamja-flower text-md">&quot;{obj.quote && obj.quote}&quot;</p>
           </div>
         </div>
       )
@@ -41,7 +41,7 @@ function History() {
           <div className='flex flex-col items-center w-full'>
             <p className='text-center text-xl mt-5 font-semibold'>{person}</p>
             <p className='text-center mt-10 font-gamja-flower text-lg w-3/4'>-{obj.description}</p>
-            <p className="mt-10 text-center w-1/2 font-gamja-flower text-md">"{obj.quote}"</p>
+            <p className="mt-10 text-center w-1/2 font-gamja-flower text-md">&quot;{obj.quote}&quot;</p>
           </div>
         </div>
       )
