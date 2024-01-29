@@ -18,8 +18,6 @@ function History() {
     const itemToAdd = quotes.find(element => element.name === obj.name)
     return {...obj, quote: itemToAdd ? itemToAdd.quote : null}
   })
-  const targetIndex = compArray.findIndex(obj => obj.name === "John Von Neumanm")
-  compArray[targetIndex].quote = "If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is."
   console.log(compArray)
   const elements = compArray.map((obj)=>{
     const person = obj.name
@@ -32,7 +30,7 @@ function History() {
           <div className='flex flex-col items-center w-full'>
             <p className='text-center text-xl mt-5 font-semibold'>{person}</p>
             <p className='text-center mt-10 font-gamja-flower text-lg w-3/4'>-{obj.description}</p>
-            <p className="mt-10 text-center w-1/2 font-gamja-flower text-md">"{obj.quote}"</p>
+            <p className="mt-10 text-center w-1/2 font-gamja-flower text-md">"{obj.quote && obj.quote}"</p>
           </div>
         </div>
       )
