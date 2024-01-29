@@ -38,10 +38,13 @@ function History() {
       )
     } if(searchVal) {
       return(
-        <div onClick={()=>{router.push(`/history/${person.split(" ").join("")}`)}} key={obj.name} className=' mt-10 w-80 h-80 bg-white rounded-xl flex flex-col items-center transition transform duration-300 ease-in-out hover:scale-110 cursor-pointer' >
-          <p className='text-center text-lg mt-5'>{person}</p>
-          <img src={obj.src} className="rounded-xl mt-5 w-5/6 h-2/3" />
-          <p className='text-center'>---{obj.description}---</p>
+        <div onClick={()=>{router.push(`/history/${person.split(" ").join("")}`)}} key={obj.name} className='mt-10 w-5/6 h-80 mx-auto bg-white rounded-xl flex transition transform duration-300 ease-in-out hover:scale-110 cursor-pointer'>
+          <img src={obj.src} className="rounded-xl w-auto h-full" />
+          <div className='flex flex-col items-center w-full'>
+            <p className='text-center text-xl mt-5 font-semibold'>{person}</p>
+            <p className='text-center mt-10 font-gamja-flower text-lg w-3/4'>-{obj.description}</p>
+            <p className="mt-10 text-center w-1/2 font-gamja-flower text-md">"{obj.quote}"</p>
+          </div>
         </div>
       )
     }
