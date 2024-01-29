@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'gamja-flower': ['"Gamja Flower"', 'cursive'],
+        'single-day': ['"Single Day"', 'cursive']
+      },
       height: {
         "1/8": "12.5%"
     },
