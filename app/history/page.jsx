@@ -66,7 +66,7 @@ function History() {
         <input type='text' onChange={handleChange} placeholder='Search' className='bg-white w-1/5 h-12 rounded-xl border-2 pl-2 text-lg font-bold'/>
         <IoIosSearch className='ml-4 text-3xl'/>
       </div>
-      <div onClick={toggle} className="w-1/6 h-5p bg-blue-400 rounded-xl absolute top-32 right-16 text-white flex justify-center items-center text-lg font-bold  transition transform duration-300 ease-in-out hover:scale-110 cursor-pointer">
+      <div onClick={toggle} className="w-1/6 h-5p bg-blue-900 rounded-xl absolute top-32 right-16 text-white flex justify-center items-center text-lg font-bold  transition transform duration-300 ease-in-out hover:scale-110 cursor-pointer hover:bg-blue-400">
           Legg til en Person
           <BsFillPlusSquareFill className="ml-3 text-xl"/>
       </div>
