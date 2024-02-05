@@ -64,8 +64,8 @@ function page() {
         <form className='flex flex-col items-center' onSubmit={onSumbit}>
           <label className='mt-3' htmlFor='email'>Email</label>
           <input type="text" id='email' name='email' value={email} onChange={emailChange} className="w-3/4 border-2 border-black h-12 rounded-xl mb-5"/>
-          <label htmlFor="password">Password</label>
-          <input type="text" id='password' name='password' value={password} onChange={passwordChange} className="w-3/4 border-2 border-black h-12 rounded-xl"/>
+          <label type="password" htmlFor="password">Password</label>
+          <input type="text" id='password' name='password' type="password" value={password} onChange={passwordChange} className="w-3/4 border-2 border-black h-12 rounded-xl"/>
           <button className='bg-blue-900 h-12 w-3/4 rounded-2xl text-white mt-10 text-lg'>Logg In</button>
         </form>
         <h2 className="text-center mt-8">Don't have an Account?</h2>

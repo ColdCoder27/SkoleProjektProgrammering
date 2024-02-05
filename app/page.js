@@ -4,12 +4,17 @@ import Image from "next/image";
 import pythonIcon from "../public/python.jpg"
 import { useContext } from "react";
 import { Context } from "./context";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 export default function Home() {
   const name = "Alfred"
+  const [text, count] = useTypewriter({
+    words: ["Welcome Alfred"],
+    delaySpeed: 2000
+  })
   return (
     <>
-      <p className="absolute top-32 left-28 text-3xl">Welcome {name}</p>
+      <p className="absolute top-32 left-28 text-3xl">{text}<Cursor/></p>
       <div className="text-red-500 flex justify-center mt-32 h-full gap-20">
         
         <DescBox url="/python" head="python">
