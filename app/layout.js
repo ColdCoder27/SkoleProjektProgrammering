@@ -1,6 +1,8 @@
 
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+import { MyContext } from "./context";
+import ProfileIcon from "@/components/ProfileIcon";
 
 
 
@@ -13,8 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="h-screen">
-        <Navbar />
-        {children}
+        <MyContext>
+          <Navbar />
+          <ProfileIcon />
+          {children}
+        </MyContext>
       </body>
     </html>
   );

@@ -1,13 +1,14 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-
+import { Context } from '../context'
+ 
 function page() {
   const router = useRouter()
-  const [authorized, setAuthorized] = useState("")
   const [name, setName] = useState("")
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
+  const {rerender, setRerender} = useContext(Context)
   const nameChange = (e) => {
     setName(e.target.value)
     console.log(name)
@@ -38,20 +39,23 @@ function page() {
     .then(response => response.json()) // Parsing the JSON response
     .then(data => {
       console.log(data)
-      setAuthorized(data.userAuth)
-    }) // Handling the success response
+      const jasonAuthKey = JSON.stringify(data)
+      localStorage.setItem("authorized", jasonAuthKey) 
+      localStorage.setItem("loggedIn", true)
+    })
+    .then(() => {
+      setRerender(!rerender)
+      router.back()}) // Handling the success response
     .catch(error => console.error('Error:', error)); // Handling any errors
-    router.back()
+   
   } 
-  useEffect(()=>{
-    console.log(authorized)
-  }, [authorized])
   const loggin = () => {
     router.push("/loggIn")
   }
+  localStorage.getItem("authorized") && console.log(JSON.parse(localStorage.getItem("authorized")))
   return (
     <>
-      <div className="w-1/3 h-3/4 mx-auto bg-white mt-14 pt-8">
+      <div className="w-1/3 h-3/4 mx-auto bg-white mt-14 pt-8 rounded-2xl">
         <h1 className="text-center text-2xl ">Sign in</h1>
         <form className='flex flex-col items-center' onSubmit={onSumbit}>
           <label className="mt-5" htmlFor="name">Name</label>
